@@ -29,14 +29,14 @@ console.log(name6);
 
 // ES5
 function driversLicence5(passedTest) {
-    
+
     if (passedTest) {
         console.log(firstName);
         var firstName = 'John';
         var yearOfBirth = 1990;
     }
-    
-    
+
+
     console.log(firstName + ', born in ' + yearOfBirth + ', is now officially allowed to drive a car.');
 }
 
@@ -45,15 +45,15 @@ driversLicence5(true);
 
 // ES6
 function driversLicence6(passedTest) {
-    
+
     //console.log(firstName);
     let firstName;
     const yearOfBirth = 1990;
-    
+
     if (passedTest) {
         firstName = 'John';
     }
-    
+
     console.log(firstName + ', born in ' + yearOfBirth + ', is now officially allowed to drive a car.');
 }
 
@@ -105,14 +105,11 @@ function calcAge(year) {
     return 2016 - year;
 }
 
-
 // ES5
 console.log('This is ' + firstName + ' ' + lastName + '. He was born in ' + yearOfBirth + '. Today, he is ' + calcAge(yearOfBirth) + ' years old.');
 
 // ES6
 console.log(`This is ${firstName} ${lastName}. He was born in ${yearOfBirth}. Today, he is ${calcAge(yearOfBirth)} years old.`);
-
-
 
 
 const n = `${firstName} ${lastName}`;
@@ -159,7 +156,7 @@ var box5 = {
     color: 'green',
     position: 1,
     clickMe: function() {
-       
+
        var self = this; document.querySelector('.green').addEventListener('click', function() {
             var str = 'This is box number ' + self.position + ' and it is ' + self.color;
             alert(str);
@@ -196,19 +193,17 @@ const box66 = {
 box66.clickMe();
 
 
-
-
 function Person(name) {
     this.name = name;
 }
 
 // ES5
 Person.prototype.myFriends5 = function(friends) {
-    
+
     var arr = friends.map(function(el) {
-       return this.name + ' is friends with ' + el; 
+       return this.name + ' is friends with ' + el;
     }.bind(this));
-    
+
     console.log(arr);
 }
 
@@ -257,8 +252,6 @@ console.log(b);
 
 
 
-
-
 function calcAgeRetirement(year) {
     const age = new Date().getFullYear() - year;
     return [age, 65 - age];
@@ -289,13 +282,13 @@ Array.from(boxes).forEach(cur => cur.style.backgroundColor = 'dodgerblue');
 
 //ES5
 for(var i = 0; i < boxesArr5.length; i++) {
-    
+
     if(boxesArr5[i].className === 'box blue') {
         continue;
     }
-    
+
     boxesArr5[i].textContent = 'I changed to blue!';
-    
+
 }
 
 
@@ -369,7 +362,7 @@ Array.from(all).forEach(cur => cur.style.color = 'purple');
 function isFullAge5() {
     //console.log(arguments);
     var argsArr = Array.prototype.slice.call(arguments);
-    
+
     argsArr.forEach(function(cur) {
         console.log((2016 - cur) >= 18);
     })
@@ -386,7 +379,6 @@ function isFullAge6(...years) {
 }
 
 isFullAge6(1990, 1999, 1965, 2016, 1987);
-
 
 
 //ES5
@@ -409,7 +401,6 @@ function isFullAge6(limit, ...years) {
 }
 
 isFullAge6(16, 1990, 1999, 1965, 2016, 1987);
-
 */
 
 /////////////////////////////////
@@ -418,10 +409,10 @@ isFullAge6(16, 1990, 1999, 1965, 2016, 1987);
 /*
 // ES5
 function SmithPerson(firstName, yearOfBirth, lastName, nationality) {
-    
+
     lastName === undefined ? lastName = 'Smith' : lastName = lastName;
     nationality === undefined ? nationality = 'american' : nationality = nationality;
-    
+
     this.firstName = firstName;
     this.lastName = lastName;
     this.yearOfBirth = yearOfBirth;
@@ -506,12 +497,12 @@ class Person6 {
         this.yearOfBirth = yearOfBirth;
         this.job = job;
     }
-    
+
     calculateAge() {
         var age = new Date().getFullYear - this.yearOfBirth;
         console.log(age);
     }
-    
+
     static greeting() {
         console.log('Hey there!');
     }
@@ -579,7 +570,7 @@ class Athlete6 extends Person6 {
         this.olympicGames = olympicGames;
         this.medals = medals;
     }
-    
+
     wonMedal() {
         this.medals++;
         console.log(this.medals);
